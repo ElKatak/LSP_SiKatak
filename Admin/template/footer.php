@@ -1,258 +1,142 @@
-
-
 <!--begin::Footer-->
-      <footer class="app-footer">
-        <!--begin::To the end-->
-        <div class="float-end d-none d-sm-inline">Anything you want</div>
-        <!--end::To the end-->
-        <!--begin::Copyright-->
-        <strong>
-          Copyright &copy; 2014-2025&nbsp;
-          <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>.
-        </strong>
-        All rights reserved.
-        <!--end::Copyright-->
-      </footer>
-      <!--end::Footer-->
-    </div>
-    <!--end::App Wrapper-->
-    <!--begin::Script-->
-    <!--begin::Third Party Plugin(OverlayScrollbars)-->
-    <script
-      src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/browser/overlayscrollbars.browser.es6.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
-    <script src="./js/adminlte.js"></script>
-    <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
-    <script>
-      const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';
-      const Default = {
-        scrollbarTheme: 'os-theme-light',
-        scrollbarAutoHide: 'leave',
-        scrollbarClickScroll: true,
-      };
-      document.addEventListener('DOMContentLoaded', function () {
-        const sidebarWrapper = document.querySelector(SELECTOR_SIDEBAR_WRAPPER);
-        if (sidebarWrapper && OverlayScrollbarsGlobal?.OverlayScrollbars !== undefined) {
-          OverlayScrollbarsGlobal.OverlayScrollbars(sidebarWrapper, {
-            scrollbars: {
-              theme: Default.scrollbarTheme,
-              autoHide: Default.scrollbarAutoHide,
-              clickScroll: Default.scrollbarClickScroll,
-            },
-          });
-        }
+<footer class="app-footer">
+  <div class="float-end d-none d-sm-inline">
+    <strong style="font-family:'Outfit',sans-serif;">XTM Ganakat</strong>
+  </div>
+  <strong style="font-family:'Outfit',sans-serif;">
+    Copyright &copy; 2025&nbsp;
+    <a href="hal_admin.php" class="text-decoration-none">XTM Ganakat</a>.
+  </strong>
+  All rights reserved.
+</footer>
+<!--end::Footer-->
+</div>
+<!--end::App Wrapper-->
+
+<!-- ── Scripts ───────────────────────────────────────────── -->
+<script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/browser/overlayscrollbars.browser.es6.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="./assets/dist/js/adminlte.js"></script>
+
+<!-- OverlayScrollbars config -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const sidebarWrapper = document.querySelector('.sidebar-wrapper');
+    if (sidebarWrapper && OverlayScrollbarsGlobal?.OverlayScrollbars) {
+      OverlayScrollbarsGlobal.OverlayScrollbars(sidebarWrapper, {
+        scrollbars: { theme: 'os-theme-light', autoHide: 'leave', clickScroll: true },
       });
-    </script>
-    <!--end::OverlayScrollbars Configure-->
-    <!-- OPTIONAL SCRIPTS -->
-    <!-- sortablejs -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- sortablejs -->
-    <script>
-      new Sortable(document.querySelector('.connectedSortable'), {
-        group: 'shared',
-        handle: '.card-header',
-      });
+    }
+  });
+</script>
 
-      const cardHeaders = document.querySelectorAll('.connectedSortable .card-header');
-      cardHeaders.forEach((cardHeader) => {
-        cardHeader.style.cursor = 'move';
-      });
-    </script>
-    <!-- apexcharts -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.min.js"
-      integrity="sha256-+vh8GkaU7C9/wbSLIcwq82tQ2wTf44aOHA8HlBMwRI8="
-      crossorigin="anonymous"
-    ></script>
-    <!-- ChartJS -->
-    <script>
-      // NOTICE!! DO NOT USE ANY OF THIS JAVASCRIPT
-      // IT'S ALL JUST JUNK FOR DEMO
-      // ++++++++++++++++++++++++++++++++++++++++++
+<!-- ApexCharts (untuk dashboard) -->
+<script src="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.min.js" crossorigin="anonymous"></script>
 
-      const sales_chart_options = {
-        series: [
-          {
-            name: 'Digital Goods',
-            data: [28, 48, 40, 19, 86, 27, 90],
-          },
-          {
-            name: 'Electronics',
-            data: [65, 59, 80, 81, 56, 55, 40],
-          },
-        ],
-        chart: {
-          height: 300,
-          type: 'area',
-          toolbar: {
-            show: false,
-          },
-        },
-        legend: {
-          show: false,
-        },
-        colors: ['#0d6efd', '#20c997'],
-        dataLabels: {
-          enabled: false,
-        },
-        stroke: {
-          curve: 'smooth',
-        },
-        xaxis: {
-          type: 'datetime',
-          categories: [
-            '2023-01-01',
-            '2023-02-01',
-            '2023-03-01',
-            '2023-04-01',
-            '2023-05-01',
-            '2023-06-01',
-            '2023-07-01',
-          ],
-        },
-        tooltip: {
-          x: {
-            format: 'MMMM yyyy',
-          },
-        },
-      };
+<!-- ════════════════════════════════════════
+     SEARCH OVERLAY LOGIC
+════════════════════════════════════════ -->
+<script>
+(function() {
+  const overlay  = document.getElementById('xtm-search-overlay');
+  const input    = document.getElementById('xtm-search-input');
+  const results  = document.getElementById('xtm-search-results');
+  const btnOpen  = document.getElementById('btn-open-search');
+  const btnClose = document.getElementById('btn-close-search');
+  if (!overlay) return;
 
-      const sales_chart = new ApexCharts(
-        document.querySelector('#revenue-chart'),
-        sales_chart_options,
-      );
-      sales_chart.render();
-    </script>
-    <!-- jsvectormap -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/js/jsvectormap.min.js"
-      integrity="sha256-/t1nN2956BT869E6H4V1dnt0X5pAQHPytli+1nTZm2Y="
-      crossorigin="anonymous"
-    ></script>
+  let timer;
 
+  function openSearch() {
+    overlay.classList.add('show');
+    setTimeout(() => input && input.focus(), 80);
+  }
+  function closeSearch() {
+    overlay.classList.remove('show');
+    if (input) { input.value = ''; }
+    if (results) results.innerHTML = `
+      <div class="p-4 text-center text-muted" style="font-size:13px;">
+        <i class="bi bi-search d-block fs-4 mb-2 opacity-25"></i>
+        Ketik minimal 2 karakter untuk mencari…
+      </div>`;
+  }
 
-    <!-- Alasan sub-menu (dropdown) ta aktif -->
-<script src="assets/plugins/jquery/jquery.min.js"></script>
-<script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/dist/js/adminlte.min.js"></script>
+  btnOpen && btnOpen.addEventListener('click', function(e){ e.preventDefault(); openSearch(); });
+  btnClose && btnClose.addEventListener('click', closeSearch);
+  overlay.addEventListener('click', function(e){ if (e.target === overlay) closeSearch(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeSearch(); });
 
+  input && input.addEventListener('input', function() {
+    clearTimeout(timer);
+    const q = this.value.trim();
+    if (q.length < 2) {
+      results.innerHTML = `<div class="p-4 text-center text-muted" style="font-size:13px;"><i class="bi bi-search d-block fs-4 mb-2 opacity-25"></i>Ketik minimal 2 karakter…</div>`;
+      return;
+    }
+    results.innerHTML = `<div class="p-3 text-center text-muted" style="font-size:13px;"><div class="spinner-border spinner-border-sm me-2"></div>Mencari…</div>`;
+    timer = setTimeout(() => {
+      fetch('ajax/search.php?q=' + encodeURIComponent(q))
+        .then(r => r.json())
+        .then(data => {
+          if (!data.length) {
+            results.innerHTML = `<div class="p-4 text-center text-muted" style="font-size:13px;"><i class="bi bi-search d-block fs-4 mb-2 opacity-25"></i>Tidak ada hasil untuk "<b>${q}</b>"</div>`;
+            return;
+          }
+          const typeColors = {
+            Berita:'#3B82F6', Galeri:'#8B5CF6', Guru:'#22C55E',
+            Kontak:'#F97316', Profil:'#06B6D4'
+          };
+          results.innerHTML = data.map(item => {
+            const color = typeColors[item.type] || '#64748B';
+            return `<a href="${item.url}" class="xtm-search-result" style="display:flex;">
+              <span style="background:${color}18;color:${color};padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600;flex-shrink:0;align-self:flex-start;margin-top:2px;">${item.type}</span>
+              <div style="flex:1;padding-left:10px;">
+                <div style="font-weight:600;font-size:14px;color:#0F172A;">${item.label}</div>
+                ${item.sub ? `<div style="font-size:12px;color:#64748B;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:400px;">${item.sub}</div>` : ''}
+              </div>
+              <i class="bi bi-chevron-right text-muted ms-2 align-self-center"></i>
+            </a>`;
+          }).join('');
+        })
+        .catch(() => {
+          results.innerHTML = `<div class="p-4 text-center text-danger" style="font-size:13px;">Gagal memuat hasil pencarian.</div>`;
+        });
+    }, 300);
+  });
+})();
+</script>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/maps/world.js"
-      integrity="sha256-XPpPaZlU8S/HWf7FZLAncLg2SAkP8ScUTII89x9D3lY="
-      crossorigin="anonymous"
-    ></script>
-    <!-- jsvectormap -->
-    <script>
-      // World map by jsVectorMap
-      new jsVectorMap({
-        selector: '#world-map',
-        map: 'world',
-      });
+<!-- ════════════════════════════════════════
+     CHAT AUTO-SCROLL (untuk pesan.php)
+════════════════════════════════════════ -->
+<script>
+  const chatBody = document.getElementById('chat-messages');
+  if (chatBody) chatBody.scrollTop = chatBody.scrollHeight;
+</script>
 
-      // Sparkline charts
-      const option_sparkline1 = {
-        series: [
-          {
-            data: [1000, 1200, 920, 927, 931, 1027, 819, 930, 1021],
-          },
-        ],
-        chart: {
-          type: 'area',
-          height: 50,
-          sparkline: {
-            enabled: true,
-          },
-        },
-        stroke: {
-          curve: 'straight',
-        },
-        fill: {
-          opacity: 0.3,
-        },
-        yaxis: {
-          min: 0,
-        },
-        colors: ['#DCE6EC'],
-      };
+<!-- ════════════════════════════════════════
+     CHART INIT (untuk dashboard — hanya jika ada elemen)
+════════════════════════════════════════ -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Chart berita per bulan
+  if (document.querySelector('#chart-berita')) {
+    new ApexCharts(document.querySelector('#chart-berita'), {
+      series: [{ name: 'Berita', data: window.chartBeritaData || [] }],
+      chart: { type: 'area', height: 200, toolbar: { show: false }, sparkline: { enabled: false } },
+      colors: ['#3B82F6'],
+      dataLabels: { enabled: false },
+      stroke: { curve: 'smooth', width: 2 },
+      fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: 0.4, opacityTo: 0.05 } },
+      xaxis: { categories: window.chartBeritaLabels || [], labels: { style: { fontSize: '11px' } } },
+      yaxis: { min: 0, labels: { style: { fontSize: '11px' } } },
+      grid: { borderColor: '#F1F5F9' },
+      tooltip: { theme: 'light' },
+    }).render();
+  }
+});
+</script>
 
-      const sparkline1 = new ApexCharts(document.querySelector('#sparkline-1'), option_sparkline1);
-      sparkline1.render();
-
-      const option_sparkline2 = {
-        series: [
-          {
-            data: [515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921],
-          },
-        ],
-        chart: {
-          type: 'area',
-          height: 50,
-          sparkline: {
-            enabled: true,
-          },
-        },
-        stroke: {
-          curve: 'straight',
-        },
-        fill: {
-          opacity: 0.3,
-        },
-        yaxis: {
-          min: 0,
-        },
-        colors: ['#DCE6EC'],
-      };
-
-      const sparkline2 = new ApexCharts(document.querySelector('#sparkline-2'), option_sparkline2);
-      sparkline2.render();
-
-      const option_sparkline3 = {
-        series: [
-          {
-            data: [15, 19, 20, 22, 33, 27, 31, 27, 19, 30, 21],
-          },
-        ],
-        chart: {
-          type: 'area',
-          height: 50,
-          sparkline: {
-            enabled: true,
-          },
-        },
-        stroke: {
-          curve: 'straight',
-        },
-        fill: {
-          opacity: 0.3,
-        },
-        yaxis: {
-          min: 0,
-        },
-        colors: ['#DCE6EC'],
-      };
-
-      const sparkline3 = new ApexCharts(document.querySelector('#sparkline-3'), option_sparkline3);
-      sparkline3.render();
-    </script>
-    <!--end::Script-->
-  </body>
-  <!--end::Body-->
-
+</body>
 </html>
